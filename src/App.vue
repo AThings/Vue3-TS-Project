@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const str = "123"
+const str = '123'
 </script>
 
 <template>
@@ -9,11 +9,11 @@ const str = "123"
 </template>
 
 <style scoped lang="scss">
-.box{
+.box {
   width: 600px;
   height: 400px;
   background: black;
-  h1{
+  h1 {
     color: white;
   }
 }

@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # npm test
-pnpm run format
+# pnpm run check
+npx lint-staged

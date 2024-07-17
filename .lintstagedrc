@@ -1,0 +1,3 @@
+{
+  "*.{html,vue,ts,js,json,md}": ["bash lint.sh", "git commit"]
+}
