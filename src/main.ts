@@ -1,8 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-createApp(App).mount('#app')
+// 引用element 插件和样式
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+// element-plus 国际化
+// @ts-ignore
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-const fun = () => {
-  console.log('没有格式化的代码')
-}
-fun()
+const app = createApp(App)
+// 安装element-plus插件
+app.use(ElementPlus, {
+  locale: zhCn,
+})
+app.mount('#app')

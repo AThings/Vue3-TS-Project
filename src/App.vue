@@ -1,22 +1,26 @@
 <script setup lang="ts">
-const str = '123'
+import { ref } from 'vue'
+import { Plus } from '@element-plus/icons-vue'
+const currentPage4 = ref(1)
+const pageSize4 = ref(1)
+const size = ref(1)
 </script>
 
 <template>
   <div class="box">
-    <h1>根组件</h1>
+    <el-button type="primary" size="default" :icon="Plus">12</el-button>
+    <el-pagination
+      v-model:current-page="currentPage4"
+      v-model:page-size="pageSize4"
+      :page-sizes="[100, 200, 300, 400]"
+      :size="size"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="400"
+    />
   </div>
 </template>
 
 <style scoped lang="scss">
-.box {
-  width: 600px;
-  height: 400px;
-  background: black;
-  h1 {
-    color: white;
-  }
-}
 .logo {
   height: 6em;
   padding: 1.5em;
