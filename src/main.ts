@@ -8,11 +8,16 @@ import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 // svg需要的配置代码
 import 'virtual:svg-icons-register'
+// 引入全局组件
+import globalComponents from '@/components/index.ts'
 
 const app = createApp(App)
 // 安装element-plus插件
 app.use(ElementPlus, {
   locale: zhCn,
 })
+// 安装全局组件
+app.use(globalComponents)
+
 console.log(import.meta.env)
 app.mount('#app')

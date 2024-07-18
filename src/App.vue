@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
-import SvgIcon from '@/components/SvgIcon/index.vue'
+// import SvgIcon from '@/components/SvgIcon/index.vue'
 const currentPage4 = ref(1)
 const pageSize4 = ref(1)
 const size = ref(1)
