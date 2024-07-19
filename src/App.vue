@@ -19,6 +19,7 @@ const size = ref(1)
       :total="400"
     />
     <svg-icon name="phone" width="60px" height="60px" color="red"></svg-icon>
+    <h1 class="scssStyle">全局样式测试</h1>
   </div>
 </template>
 
@@ -34,5 +35,13 @@ const size = ref(1)
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.scssStyle {
+  padding: 10px 8px;
+  border: 1px solid black;
+  background: green;
+  color: $color;
+  font-size: 20px;
+  font-weight: bold;
 }
 </style>

@@ -10,6 +10,8 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'virtual:svg-icons-register'
 // 引入全局组件
 import globalComponents from '@/components/index.ts'
+// 引入全局样式
+import '@/styles/index.scss'
 
 const app = createApp(App)
 // 安装element-plus插件
