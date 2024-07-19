@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
+import axios from 'axios'
 // import SvgIcon from '@/components/SvgIcon/index.vue'
 const currentPage4 = ref(1)
 const pageSize4 = ref(1)
 const size = ref(1)
+const handleTestMock = () => {
+  console.log('test')
+}
 </script>
 
 <template>
@@ -20,6 +24,7 @@ const size = ref(1)
     />
     <svg-icon name="phone" width="60px" height="60px" color="red"></svg-icon>
     <h1 class="scssStyle">全局样式测试</h1>
+    <el-button type="primary" @click="handleTestMock">mock接口测试</el-button>
   </div>
 </template>
 

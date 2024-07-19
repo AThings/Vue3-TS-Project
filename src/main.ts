@@ -21,5 +21,4 @@ app.use(ElementPlus, {
 // 安装全局组件
 app.use(globalComponents)
 
-console.log(import.meta.env)
 app.mount('#app')
