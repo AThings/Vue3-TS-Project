@@ -76,4 +76,16 @@ export default [
       return { code: 200, data: { checkUser } }
     },
   },
+  // 404请求
+  {
+    url: '/api/not-found',
+    method: 'get',
+    statusCode: 404,
+    response: (request) => {
+      return {
+        code: 404,
+        data: '404 not found',
+      }
+    },
+  },
 ] as MockMethod[]
