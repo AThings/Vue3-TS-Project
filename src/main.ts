@@ -12,6 +12,8 @@ import 'virtual:svg-icons-register'
 import globalComponents from '@/components/index.ts'
 // 引入全局样式
 import '@/styles/index.scss'
+// 引入路由
+import router from '@/router/index.ts'
 
 const app = createApp(App)
 // 安装element-plus插件
@@ -20,5 +22,7 @@ app.use(ElementPlus, {
 })
 // 安装全局组件
 app.use(globalComponents)
+// 注册模板路由
+app.use(router)
 
 app.mount('#app')

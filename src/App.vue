@@ -31,6 +31,7 @@ const handleTestMock = () => {
     <svg-icon name="phone" width="60px" height="60px" color="red"></svg-icon>
     <h1 class="scssStyle">全局样式测试</h1>
     <el-button type="primary" @click="handleTestMock">mock接口测试</el-button>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -54,5 +55,9 @@ const handleTestMock = () => {
   color: $color;
   font-size: 20px;
   font-weight: bold;
+}
+.routerView {
+  margin: 20px;
+  border: 1px solid black;
 }
 </style>
