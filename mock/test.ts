@@ -33,9 +33,9 @@ export default [
   {
     url: '/api/user/login',
     method: 'get',
-    response: ({ body }) => {
+    response: ({ query }) => {
       // 获取请求体携带过来的用户名和密码
-      const { username, password } = body
+      const { username, password } = query
       // 调用获取用户信息函数，用于判断是否有此用户
       const checkUser = createUserList().find(
         (item) => item.username === username && item.password === password,

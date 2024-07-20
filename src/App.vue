@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
-import request from '@/utils/request.ts'
+import { reqLogin } from '@/api/user'
 // import SvgIcon from '@/components/SvgIcon/index.vue'
 const currentPage4 = ref(1)
 const pageSize4 = ref(1)
 const size = ref(1)
 const handleTestMock = () => {
-  request.get('/not-12121', {}).then((res) => {
+  const params = {
+    username: 'admin',
+    password: '111111',
+  }
+  reqLogin({ params }).then((res) => {
     console.log(res, 'res')
   })
 }
