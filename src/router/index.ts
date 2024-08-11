@@ -6,7 +6,7 @@ import Home from '@/views/home/index.vue'
 let router = createRouter({
   // 路由模式 hash
   history: createWebHashHistory(),
-  routes: constantRoutes,
+  routes: [...constantRoutes],
   scrollBehavior() {
     return {
       left: 0,

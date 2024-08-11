@@ -14,12 +14,16 @@ import globalComponents from '@/components/index.ts'
 import '@/styles/index.scss'
 // 引入路由
 import router from '@/router/index.ts'
+//引入仓库
+import store from '@/store'
 
 const app = createApp(App)
 // 安装element-plus插件
 app.use(ElementPlus, {
   locale: zhCn,
 })
+// 引入定义的pinia 仓库
+app.use(store)
 // 安装全局组件
 app.use(globalComponents)
 // 注册模板路由

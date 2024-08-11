@@ -8,14 +8,12 @@ const request = axios.create({
 
 // 请求拦截器
 request.interceptors.request.use((config) => {
-  console.log(config, 'interceptors.request')
   return config
 })
 
 // 响应拦截器
 request.interceptors.response.use(
   (response) => {
-    console.log(response, 'interceptors.response')
     return response
   },
   (error) => {
