@@ -44,6 +44,7 @@ import { ElNotification } from 'element-plus'
 import { reactive, ref } from 'vue'
 import userInfoStore from '@/store/modules/user'
 import { useRouter } from 'vue-router'
+import { getCNTime } from '@/utils/time'
 // 收集账号和密码的数据
 const loginFrom = reactive({
   username: 'admin',
@@ -67,7 +68,8 @@ const handleLogin = async () => {
     $router.push('/')
     ElNotification({
       type: 'success',
-      message: '登录成功',
+      message: '欢迎回来',
+      title: `HI!, ${getCNTime()}好`,
     })
     btnLoading.value = false
   } catch (error) {
