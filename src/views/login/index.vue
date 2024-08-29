@@ -5,15 +5,20 @@
       <div class="login_form_container">
         <p class="login_form_title">Hello</p>
         <p class="login_form_title2">欢迎来到硅谷甄选</p>
-        <el-form class="login_form">
-          <el-form-item>
+        <el-form
+          ref="loginFormRef"
+          class="login_form"
+          :model="loginFrom"
+          :rules="loginFormRules"
+        >
+          <el-form-item prop="username">
             <el-input
               placeholder="请输入用户名"
               :prefix-icon="User"
               v-model="loginFrom.username"
             />
           </el-form-item>
-          <el-form-item>
+          <el-form-item prop="password">
             <el-input
               type="password"
               placeholder="请输入密码"
@@ -50,7 +55,60 @@ const loginFrom = reactive({
   username: 'admin',
   password: '111111',
 })
+// 自定义验证规则方法
+const validateUsername = (rule: any, value: any, callback: any) => {
+  if (!value) {
+    callback(new Error('用户名必填'))
+  } else if (/^\d{5,10}$/.test(value)) {
+    callback()
+  } else {
+    callback(new Error('用户名长度应在5到10位'))
+  }
+}
+const validatePassword = (rule: any, value: any, callback: any) => {
+  if (!value) {
+    callback(new Error('密码必填'))
+  } else if (/^\d{5,15}$/.test(value)) {
+    callback()
+  } else {
+    callback(new Error('密码长度应在5到15位'))
+  }
+}
+// loginForm表单验证规则
+const loginFormRules = reactive({
+  username: [
+    // { required: true, message: '用户名必填', tirgger: ['change', 'blur'] },
+    // {
+    //   min: 5,
+    //   max: 10,
+    //   message: '用户名长度应在5到10位',
+    //   tirgger: ['change', 'blur'],
+    // },
+    {
+      tirgger: ['change', 'blur'],
+      validator: validateUsername,
+    },
+  ],
+  password: [
+    // { required: true, message: '密码必填', tirgger: ['change', 'blur'] },
+    // {
+    //   min: 5,
+    //   max: 15,
+    //   message: '密码长度应在5到15位',
+    //   tirgger: ['change', 'blur'],
+    // },
+    {
+      tirgger: ['change', 'blur'],
+      validator: validatePassword,
+    },
+  ],
+})
+// 表单ref
+const loginFormRef = ref()
+
+// 获取store仓库
 const storeInfo = userInfoStore()
+
 // 获取路由
 const $router = useRouter()
 
@@ -59,6 +117,8 @@ const btnLoading = ref(false)
 
 // 登录事件
 const handleLogin = async () => {
+  // 表单验证
+  await loginFormRef.value.validate()
   // 按钮加载
   btnLoading.value = true
   // 请求成功 跳转到首页

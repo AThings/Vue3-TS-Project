@@ -23,7 +23,7 @@ export default defineConfig(({ command }: ConfigEnv): UserConfigExport => {
     resolve: {
       alias: {
         // 相对路径别名配置
-        '@': path.resolve('./src'),
+        '@': path.resolve(__dirname, 'src'),
       },
     },
     // scss全局变量配置

@@ -13,7 +13,6 @@ enum API {
 
 // 用户登录接口
 export const reqLogin = (data: loginForm): Promise<loginResponseType> => {
-  console.log(data, 'data')
   return request.post<loginResponseType>(API.USER_LOGIN_URL, data)
 }
 // 获取用户信息

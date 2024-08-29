@@ -20,7 +20,6 @@ const userInfoStore = defineStore('user', {
     // 用户登录的方法
     async userLogin(params: loginForm) {
       const res: loginResponseType = await reqLogin(params)
-      console.log(res)
       // 登录失败 code:201
       // 登录成功 code：200
       if (res.code === 200) {
